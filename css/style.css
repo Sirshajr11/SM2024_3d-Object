@@ -1,0 +1,299 @@
+/* The webpage overall styling */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    color: grey;
+    text-decoration: none;
+}
+
+
+/*  This is for styling the main container that holds everything */
+
+#container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: #cfa9c0;
+}
+.bg {
+    background-color: #000000;
+    background-size: cover;
+    -webkit-background-size: cover;
+    width: 100%;
+    height: 1000px;
+    overflow: hidden;
+    position: relative;
+    /*below show how it works*/
+    &:after {
+      content: "";
+      width: 200%;
+      height: 0;
+      padding-top: 200%;
+      border-radius: 100%;
+      background: #f7f7f7;
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+
+
+/* This styles the navbar and its contents */
+
+#navbar {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    gap: 5px;
+}
+
+
+/* This styles the logo in the navbar */
+
+#navbar #logo {
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    left: 3%;
+    top: -2px;
+}
+
+
+/* This styles the logo image to be used in the navbar */
+
+#navbar #logo img {
+    margin-left: 50px;
+    height: 60px;
+    width: 60px;
+}
+#navbar #logo p{
+    margin-left: 5px;
+    font-size: larger;
+    color: rgb(155, 153, 153);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+
+/* This styles the unlisted links in the navbar */
+
+#navbar ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 5%;
+    top: 0;
+    color: black;
+}
+
+
+/* This changes the appearance of the listed links in the navbar */
+
+#navbar ul li {
+    text-decoration: none;
+    font-style: normal;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 60px;
+    width: 80px;
+    margin: 0 30px;
+    display: grid;
+    place-items: center;
+    font-size: large;
+    color: rgb(6, 5, 5);
+}
+
+
+/* This sets the hover action of the navbar links */
+
+#navbar ul:hover .active {
+    background: none;
+    border: none;
+}
+
+
+/* This styles the descriptions of the 3D object */
+
+#content {
+    height: 500px;
+    width: 700px;
+    position: absolute;
+    left: 12%;
+    top: calc(50% - 250px);
+}
+
+
+/* This styles the heading in the 3D description */
+
+#content h2 {
+    margin-top: -65px;
+    font-size: 100px;
+    color: rgb(245, 242, 242);
+}
+
+
+/* This styles the paragraph in the 3D description*/
+
+#content p {
+    margin-top: 15px;
+    font-size: 20px;
+    color: rgb(76, 75, 75);
+}
+
+
+/* This styles the button in the 3D description*/
+
+#content button {
+    width: 35%;
+    height: 40px;
+    font-size: 16px;
+    font-family: sans-serif;
+    margin-top: 5vh;
+    margin-left: center;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: dodgerblue;
+    color: white;
+}
+
+
+/* This adds some hover effects over the button */
+
+#content button:hover {
+    background: navy;
+}
+
+
+/* This styles the social media icons*/
+
+#icons {
+    height: 500px;
+    width: 140px;
+    background: none;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 250px);
+    display: flex;
+    align-items: center;
+    color: #000000;
+    filter: drop-shadow(2px 2px 2px rgb(14, 1, 45));
+}
+
+
+/* This styles the social media icons logos*/
+
+#icons #iconsLogo {
+    height: 300px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* This styles the social media icons logos images*/
+
+#icons #iconsLogo i {
+    height: 50px;
+    width: 50px;
+    font-size: 30px;
+    margin: 10px;
+    color: grey;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+#icons #iconsLogo:hover{
+    color: aqua;
+}
+
+/* This styles the aside container */
+
+#aSide {
+    margin-top: 50px;
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: calc(35%  -250px);
+    right: 7%;
+}
+
+
+/* This styles the 3D object inserted in the aside container */
+
+#aSide model-viewer {
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    color: black;
+}
+/* Media Query for Tablets and Smaller Screens */
+@media screen and (max-width: 1024px) {
+    /* Adjustments for the main container */
+    #container {
+        height: auto;
+    }
+
+    /* Hamburger Menu Styles */
+    #navbar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 5%;
+        top: 60px;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    #navbar ul.active {
+        display: flex;
+    }
+
+    #navbar ul li {
+        height: auto;
+        width: 100%;
+        margin: 0;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 16px;
+    }
+
+    #navbar #menu-icon {
+        display: block;
+    }
+
+    #navbar #logo {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+    }
+}
+
+/* Media Query for Mobile Phones */
+@media screen and (max-width: 768px) {
+    /* Adjustments for the 3D content and aside */
+    #content, #aSide {
+        position: static;
+        width: 100%;
+    }
+    #content h2{
+        font-size: 30px;
+    }
+    #content p{
+        font-size: 10px;
+        margin-right:25px ;
+    }
+
+    /* Other mobile-specific styling here */
+}

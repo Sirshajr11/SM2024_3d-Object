@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3D Object</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/19c8da34c9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/assets/download.png">
+
+    <!--Imports a model-viewer JavaScript code -->
+    <!--It helps to handle how the 3D Object would be displayed -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div id="container">
+     <section>
+      <div class="bg">
+
+        <!-- Navbar container -->
+        <div id="navbar">
+            <div id="logo">
+                <img src="assets/download.png" alt="logo">
+                <p>SAMUDRAMANTHAN</p>
+            </div>
+            <ul>
+                <li class="active">
+                    <a href="#">Home</a>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Stay</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div id="navbar">
+                <div id="menu-icon">&#9776;</div> <!-- Hamburger menu icon -->
+                <!-- Rest of your navbar content -->
+            </div>
+            
+        </div>
+
+        <!-- An aside -->
+        <!-- This is for holding the 3D object -->
+        <div id="aSide">
+
+            <!-- 3D objsect -->
+            <!-- This inserts the 3D object inside the aside container -->
+            <model-viewer src="assets/i_phone_14_pro_copy.gltf" alt="VR Headset" auto-rotate camera-controls ar ios-src="assets/i_phone_14_pro_copy.gltf">
+            </model-viewer>
+        </div>
+
+        <!-- Content container -->
+        <!-- This is for holding some brief description about the 3D object -->
+        <div id="content">
+            <h2>3D <br>Objects</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid enim nesciunt incidunt unde eos aspernatur quisquam, itaque a aperiam numquam consectetur temporibus tenetur ducimus dignissimos optio tempore, nihil neque? Ducimus?</p>
+            <button>Register</button>
+            <i class="fa-solid fa-rocket"></i>
+        </div>
+
+        <!-- Social media icons -->
+        <!-- This is for holding some company's social media icons and related links -->
+        <div id="icons">
+            <div id="iconsLogo">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+            </div>
+        </div>
+     </div>
+    </div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuIcon = document.getElementById("menu-icon");
+            const navList = document.querySelector("#navbar ul");
+    
+            menuIcon.addEventListener("click", function () {
+                navList.classList.toggle("active");
+            });
+        });
+    </script>
+    
+</body>
+
+</html>
